@@ -1,0 +1,11 @@
+<mat-card appRandomColor class="card">
+    <mat-card-title>
+        {{board.title}}
+    </mat-card-title>
+    <mat-card-content class="card-content">
+        {{board?.description}}
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button class="card-content" (click)="navigateToList(board.id)">VIEW</button>
+    </mat-card-actions>
+</mat-card>

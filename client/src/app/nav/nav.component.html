@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" class="navbar">
+    <div>
+        <p routerLink="boards">Trello</p>
+    </div>
+    <div *ngIf="(accountService.currentUser$ | async) as user" class="logged-in">
+        <p>{{user.username}}</p>
+        <button mat-raised-button type="submit" color="accent" aria-label="Logout" (click)="logout()">Logout</button>
+    </div>
+    <div class="auth-group" *ngIf="(accountService.currentUser$ | async) === null">
+        <button mat-raised-button type="submit" color="secondary" aria-label="Login" (click)="openLoginDialog()">
+            Login
+        </button>
+        <button mat-raised-button type="submit" color="accent" aria-label="Register" (click)="openRegisterDialog()">
+            Register
+        </button>
+    </div>
+</mat-toolbar>

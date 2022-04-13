@@ -1,0 +1,45 @@
+<form #loginForm="ngForm" (ngSubmit)="login()" class="login-form" autocomplete="off">
+  <mat-form-field appearance="outline">
+    <mat-label>Email Address</mat-label>
+    <input name="email" [(ngModel)]="model.email" matInput required placeholder="Demo Email: callahan@me.com">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input name="password" [(ngModel)]="model.password" matInput required placeholder="Demo Password: testtest1">
+    <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+    <!-- <mat-hint>Hint</mat-hint> -->
+  </mat-form-field>
+  <div class="buttons-container">
+    <button [disabled]="!model.email || !model.password" mat-raised-button type="submit" color="primary" aria-label="Login">
+      Login
+    </button>
+    <button mat-raised-button [mat-dialog-close]="true" color="warn">Cancel</button>
+  </div>
+</form>
+
+<!-- <mat-toolbar color="primary" class="navbar">
+    <div>
+        <p>Trello</p>
+    </div>
+    <div *ngIf="accountService.currentUser$ | async" class="logged-in">
+        <p>Username</p>
+        <button mat-raised-button type="submit" color="accent" aria-label="Logout" (click)="logout()">Logout</button>
+    </div>
+    <form *ngIf="(accountService.currentUser$ | async) === null" #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+        <mat-form-field hideRequiredMarker appearance="standard">
+            <mat-label>Email</mat-label>
+            <input name="email" [(ngModel)]="model.email" matInput required>
+            <mat-hint align="end">Min 1 character</mat-hint>
+        </mat-form-field>
+        <mat-form-field hideRequiredMarker appearance="standard">
+            <mat-label>Password</mat-label>
+            <input name="password" [(ngModel)]="model.password" matInput required>
+            <mat-hint align="end">Min 1 character</mat-hint>
+        </mat-form-field>
+        <button mat-raised-button type="submit" color="accent" aria-label="Login">
+            Login
+        </button>
+    </form>
+</mat-toolbar> -->

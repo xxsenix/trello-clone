@@ -1,0 +1,12 @@
+.register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+}
+.buttons-container > button:nth-child(2) {
+    margin-left: 1rem;
+}

@@ -1,0 +1,35 @@
+<div *ngIf="card" class="container">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title>{{card.title}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="card-description">
+            {{card.description}}
+        </mat-card-content>
+        <div class="form-container">
+            <mat-card-content>
+                <form (ngSubmit)="addComment(f)" #f="ngForm">
+                    <mat-form-field class="comment-field" appearance="fill">
+                        <mat-label>Leave a comment</mat-label>
+                        <textarea [(ngModel)]="model.body" name="body" matInput required placeholder="Ex. It makes me feel..."></textarea>
+                    </mat-form-field>
+                    <mat-card-actions>
+                        <button [disabled]="!model.body" mat-raised-button color="primary">Add comment</button>
+                    </mat-card-actions>
+                </form>
+            </mat-card-content>
+        </div>
+    </mat-card>
+    <mat-card *ngFor="let comment of card.comments">
+        <div class="comment-wrapper">
+            <div class="commented-by-wrapper"><a class="author" href="/">{{comment.author.username}}</a><span
+                    class="timestamp">{{comment.created_at | date: 'dd MMM yyyy'}}</span><button
+                    class="delete-button">delete</button></div>
+            <div class="comment-content-wrapper">
+                <div class="comment-content">
+                    <p>{{comment.body}}</p>
+                </div>
+            </div>
+        </div>
+    </mat-card>
+</div>

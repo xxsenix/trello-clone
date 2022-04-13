@@ -1,0 +1,14 @@
+<form #addListForm="ngForm" (ngSubmit)="addList()" class="add-list-form" autocomplete="off">
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input name="title" [(ngModel)]="model.title" matInput required placeholder="Title">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <div class="buttons-container">
+      <button [disabled]="!model.title" mat-raised-button type="submit" color="primary" aria-label="Add List">
+        Add List
+      </button>
+      <button mat-raised-button [mat-dialog-close]="true" color="warn">Cancel</button>
+    </div>
+  </form>

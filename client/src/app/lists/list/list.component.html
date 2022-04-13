@@ -1,0 +1,22 @@
+    <div cdkDropListGroup>
+      <h1 class="board-title">{{boardTitle}}</h1>
+      <div fxLayout="row wrap" fxLayoutGap="16px grid" class="list-container">
+        <div fxFlex="15%" fxFlex.xs="100%" fxFlex.sm="33%" class="column-container" *ngFor="let list of lists" cdkDropList id={{list.id}} [cdkDropListData]="list.cards"
+          (cdkDropListDropped)="onDrop($event)">
+          <mat-card class="list-title">{{list.title}}</mat-card>
+          <mat-card *ngFor="let card of list.cards" [cdkDragData]="card" cdkDrag>
+            <mat-card-header>
+              <mat-card-title>{{card.title}}</mat-card-title>
+              <mat-card-subtitle>{{card.description}}</mat-card-subtitle>
+            </mat-card-header>
+            <mat-card-actions>
+              <button mat-button class="card-content" (click)="navigateToCardDetail(card.id)">{{card.comments.length}} comments</button>
+            </mat-card-actions>
+          </mat-card>
+          <mat-card class="new-card" (click)="openAddCardDialog(list.id)">+ Add new card</mat-card>
+        </div>
+        <div class="new-list-container">
+          <mat-card class="new-list" (click)="openAddListDialog()">+ New list</mat-card>
+        </div>
+      </div>
+    </div>

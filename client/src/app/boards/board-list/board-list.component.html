@@ -1,0 +1,14 @@
+<div class="content">
+    <div fxLayout="row wrap" fxLayoutGap="16px grid">
+        <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let board of boards">
+            <app-board-item [board]="board"></app-board-item>
+        </div>
+        <div fxFlex="20%" fxFlex.xs="100%" fxFlex.sm="33%">
+            <mat-card class="card new" (click)="openAddBoardDialog()">
+                <mat-card-title>
+                    <p>Create new board</p>
+                </mat-card-title>
+            </mat-card>
+        </div>
+    </div>
+</div>

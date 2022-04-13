@@ -1,0 +1,20 @@
+.navbar {
+    justify-content: space-between;
+}
+
+.navbar>div>p {
+    cursor: pointer;
+}
+
+form > * {
+    margin-right: 1rem;
+}
+
+.logged-in {
+    display: flex;
+    align-items: center;
+}
+
+.logged-in > *, .auth-group > *{
+    margin-right: 1rem;
+}

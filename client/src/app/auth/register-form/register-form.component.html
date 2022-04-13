@@ -1,0 +1,26 @@
+<form #registerForm="ngForm" (ngSubmit)="register()" class="register-form" autocomplete="off">
+    <mat-form-field appearance="outline">
+      <mat-label>Email Address</mat-label>
+      <input name="email" [(ngModel)]="model.email" matInput required placeholder="Email Address">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Username</mat-label>
+      <input name="username" [(ngModel)]="model.username" matInput required placeholder="Username">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Password</mat-label>
+      <input name="password" [(ngModel)]="model.password" matInput required placeholder="Password">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <div class="buttons-container">
+      <button [disabled]="!model.email || !model.username || !model.password" mat-raised-button type="submit" color="primary" aria-label="Register">
+        Register
+      </button>
+      <button mat-raised-button [mat-dialog-close]="true" color="warn">Cancel</button>
+    </div>
+  </form>

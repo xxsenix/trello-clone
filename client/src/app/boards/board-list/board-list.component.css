@@ -1,0 +1,39 @@
+  /* .card-container {
+    padding: 3rem;
+    font-size: 150%;
+  }
+
+  .card {
+  }
+
+  .new {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: dashed;
+    border-color: #eee;
+  } */
+
+.card {
+  min-height: 7.5rem;
+}
+  mat-toolbar {
+    justify-content: space-between;
+}
+
+.content {
+    padding: 16px;
+}
+
+.content > mat-card {
+    margin-bottom: 16px;
+}  
+
+.new {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-style: dashed;
+  border-color: #eee;
+  cursor: pointer;
+} 

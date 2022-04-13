@@ -1,0 +1,26 @@
+<form #addBoardForm="ngForm" (ngSubmit)="addBoard()" class="add-board-form" autocomplete="off">
+    <mat-form-field appearance="outline">
+      <mat-label>Title</mat-label>
+      <input name="title" [(ngModel)]="model.title" matInput required placeholder="Title">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Description</mat-label>
+      <input name="description" [(ngModel)]="model.description" matInput required placeholder="Description">
+      <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      <!-- <mat-hint>Hint</mat-hint> -->
+    </mat-form-field>
+    <div class="radio-container">
+        <mat-radio-group name="isPrivate" [(ngModel)]="model.isPrivate">
+          <mat-radio-button class="radio-margin" value="false">Public</mat-radio-button>
+          <mat-radio-button class="radio-margin" value="true">Private</mat-radio-button>
+        </mat-radio-group>
+    </div>
+    <div class="buttons-container">
+      <button [disabled]="!model.title || !model.description || !model.isPrivate" mat-raised-button type="submit" color="primary" aria-label="Register">
+        Add Board
+      </button>
+      <button mat-raised-button [mat-dialog-close]="true" color="warn">Cancel</button>
+    </div>
+  </form>
